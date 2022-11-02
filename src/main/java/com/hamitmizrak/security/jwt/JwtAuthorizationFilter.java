@@ -13,18 +13,24 @@ import java.io.IOException;
 
 //Filter
 public class JwtAuthorizationFilter extends OncePerRequestFilter {
-    @Autowired
-    private IJwtProvider iJwtProvider;
 
+    //Constructor Injection öncelikle bunu SecurityConfig jwtAuthorizationFilterBeanMethod() adında bean ekledim
+    @Autowired
+    private  IJwtProvider iJwtProvider;
+
+    //filter daha önce çalışmamışsa
+    //requet ve responselara erişir bu filter
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        //request
+        //gelen istediği
         Authentication authentication=iJwtProvider.getAuthentication(request);
 
-        //Kimlik doğrulama
-        if(iJwtProvider.isValidateToken(request) && authentication!=null){
+        //kimlik doğrulama
+        if(authentication!=null && iJwtProvider.isValidateToken(request)){
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
+
+        //filtereleme sonrasında geri dönüş sağladık
         filterChain.doFilter(request,response);
     }
 }

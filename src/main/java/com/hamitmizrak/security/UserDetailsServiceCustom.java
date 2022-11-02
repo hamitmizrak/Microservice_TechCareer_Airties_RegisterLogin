@@ -8,18 +8,22 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-//lombok
+
+
+
 @RequiredArgsConstructor
 
 @Service
 public class UserDetailsServiceCustom implements UserDetailsService {
 
-    //injection Service
+    //inject
     private final IUserServices services;
 
+    //kullanıcı bulmak için kullanıyoruz.
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity userEntity=services.findUsername(username).orElseThrow(()->new UsernameNotFoundException(username+ "bulunamadı"));
+        // UserDetailsService -->  UserDetails (username,password,isAccountNonExpired,isAccountNonLocked,isCredentialsNonExpired,isEnabled)
+        UserEntity userEntity=services.findUsername(username).orElseThrow(()->new UsernameNotFoundException(username+" adlı kullanıcı bulunamadı") );
         return new UserPrincipal(userEntity.getId(),userEntity.getUsername(),userEntity.getPassword());
     }
 }

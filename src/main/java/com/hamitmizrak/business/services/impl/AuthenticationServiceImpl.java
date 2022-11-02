@@ -8,30 +8,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.stereotype.Service;
 
-//lombok
-//@RequiredArgsConstructor
-@Service
 public class AuthenticationServiceImpl implements IAuthenticationService {
 
     //injection
     @Autowired
-    private  AuthenticationManager authenticationManager;
+    private   AuthenticationManager authenticationManager;
+
     @Autowired
     private  IJwtProvider iJwtProvider;
 
-
     @Override
-    public String loginReturnJwt(UserDto userDto) {
-        //Authentication
+    public String loginReturnJwt(UserDto userDto){
+        //Authentication ==> UserDto username ve password vermek
         Authentication authentication=authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(userDto.getUsername(),userDto.getPassword()));
 
-        //UserPrincipal
-        UserPrincipal userPrincipal= (UserPrincipal) authentication.getPrincipal();
+        // UserPrincipal
+        UserPrincipal  userPrincipal= (UserPrincipal) authentication.getPrincipal();
 
-        //bu user kişisiyle git token oluştur
+        //IJwtProvider
         return iJwtProvider.generateToken(userPrincipal);
     }
 }

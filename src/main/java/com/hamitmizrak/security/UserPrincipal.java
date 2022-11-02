@@ -30,7 +30,8 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority(ERoles.ADMIN.toString()));
+        //rol tabanlı olmadığı için
+        return Collections.singletonList(new SimpleGrantedAuthority(ERoles.USER.toString()));
     }
 
     @Override
