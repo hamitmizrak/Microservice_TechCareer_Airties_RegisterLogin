@@ -5,11 +5,11 @@ import com.hamitmizrak.security.jwt.JwtAuthorizationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -32,12 +32,12 @@ public class SecurityConfigurationCustom extends WebSecurityConfigurerAdapter {
     ////////////////////////////////////////////////////////////////////////////
     // Bean
     @Bean
-    public WebMvcConfigurer webMvcConfigurer(){
+    public WebMvcConfigurer webMvcConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**").allowedOrigins("*")//localhost
-                 .allowedMethods("*"); //Get,Post etc çalışması
+                        .allowedMethods("*"); //Get,Post etc çalışması
             }
         };
     }
@@ -50,7 +50,7 @@ public class SecurityConfigurationCustom extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public JwtAuthorizationFilter jwtAuthorizationFilterBeanMethod(){
+    public JwtAuthorizationFilter jwtAuthorizationFilterBeanMethod() {
         return new JwtAuthorizationFilter();
     }
 
@@ -71,15 +71,19 @@ public class SecurityConfigurationCustom extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         //api izin vermek
-        http.authorizeRequests().antMatchers("/api/authentication/**").permitAll().anyRequest().authenticated();
+        http.authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS).permitAll()
+                //.antMatchers("/api/authentication/**").permitAll()
+                .antMatchers("/api/authentication/register").permitAll()
+                .anyRequest().authenticated();
 
         //filter önce
         http.addFilterBefore(jwtAuthorizationFilterBeanMethod(), UsernamePasswordAuthenticationFilter.class);
     }
 
     //web security
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        super.configure(web);
-    }
+      /*  @Override
+        public void configure(WebSecurity web) throws Exception {
+            super.configure(web);
+        }*/
 }

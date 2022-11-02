@@ -4,14 +4,15 @@ import com.hamitmizrak.business.dto.UserDto;
 import com.hamitmizrak.business.services.IAuthenticationService;
 import com.hamitmizrak.security.UserPrincipal;
 import com.hamitmizrak.security.jwt.IJwtProvider;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
 
 //lombok
 //@RequiredArgsConstructor
+@Service
 public class AuthenticationServiceImpl implements IAuthenticationService {
 
     //injection

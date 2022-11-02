@@ -96,9 +96,9 @@ public class JwtProviderImpl implements IJwtProvider {
     //HEADER: Bearer => 7
     @Override
     public String resolveToken(HttpServletRequest httpServletRequest) {
-        String bearerToken=httpServletRequest.getHeader(JWT_HEADER_BEARER);
-        if(bearerToken.startsWith(JWT_TOKEN_PREFIX) && bearerToken!=null){
-            return bearerToken.substring(7);
+        String bearer=httpServletRequest.getHeader(JWT_HEADER_BEARER);
+        if(bearer.startsWith(JWT_TOKEN_PREFIX) && bearer!=null){
+            return bearer.substring(7);
         }
         return null;
     }
@@ -114,6 +114,7 @@ public class JwtProviderImpl implements IJwtProvider {
         //Claims: JWT'de tüm bilgileri almak için
         //Jwts parseBuilder
         Claims claims=Jwts.parserBuilder().setSigningKey(jwtPublicKey).build().parseClaimsJws(tokenData).getBody();
+
         //Claims'den bilgileri al username,roles,userId
         Long userId=claims.get("userId",Long.class);
         String username=claims.getSubject();
@@ -121,7 +122,7 @@ public class JwtProviderImpl implements IJwtProvider {
         //roles
         List<GrantedAuthority> grantedAuthorities=
                 Arrays.stream(claims.get("roles").toString().split(","))
-                        .map(rol->rol.startsWith("ROLE_") ? rol:"ROLE_"+rol)
+                        .map(role->role.startsWith("ROLE_") ? role:"ROLE_"+role)
                         .map(SimpleGrantedAuthority::new)
                         .collect(Collectors.toList());
 
@@ -134,14 +135,14 @@ public class JwtProviderImpl implements IJwtProvider {
     //3.YÖNTEM (token süresini kontrol etmek )
     @Override
     public boolean isValidateToken(HttpServletRequest httpServletRequest) {
-        String tokenData=resolveToken(httpServletRequest);
+        String token=resolveToken(httpServletRequest);
         //eğer token varsa ayrıştırmaya başlansın null ise birşey yapmasın
-        if(tokenData==null)
+        if(token==null)
             return false;
 
         //Claims: JWT'de tüm bilgileri almak için
         //Jwts parseBuilder
-        Claims claims=Jwts.parserBuilder().setSigningKey(jwtPublicKey).build().parseClaimsJws(tokenData).getBody();
+        Claims claims=Jwts.parserBuilder().setSigningKey(jwtPublicKey).build().parseClaimsJws(token).getBody();
 
         //eğer token süresi dolmuşsa false dönder
         if(claims.getExpiration().before(new Date()))

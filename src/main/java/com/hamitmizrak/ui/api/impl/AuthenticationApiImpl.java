@@ -5,6 +5,7 @@ import com.hamitmizrak.business.services.IAuthenticationService;
 import com.hamitmizrak.business.services.IUserServices;
 import com.hamitmizrak.ui.api.IAuthenticationApi;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,15 +14,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 //lombok
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 
 @RestController
 @RequestMapping("/api/authentication")
 public class AuthenticationApiImpl implements IAuthenticationApi {
 
     //Injection
-    private final IAuthenticationService authenticationService;
-    private final IUserServices userServices;
+    private IAuthenticationService authenticationService;
+    private IUserServices userServices;
+
+    @Autowired
+    public AuthenticationApiImpl(IAuthenticationService authenticationService, IUserServices userServices) {
+        this.authenticationService = authenticationService;
+        this.userServices = userServices;
+    }
 
     //LOGIN
     // http://localhost:5555/api/authentication/login
@@ -37,10 +44,10 @@ public class AuthenticationApiImpl implements IAuthenticationApi {
     @PostMapping("register")
     public ResponseEntity<?> register(@RequestBody UserDto userDto) {
         //kullanıcı adımız unique olmalıdır.
-        if(userServices.findUsername(userDto.getUsername()).isPresent()){
+        if (userServices.findUsername(userDto.getUsername()).isPresent()) {
             //aynı kullanıcı varsa conflict oluşturalım
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-        return new ResponseEntity<>(userServices.createUser(userDto),HttpStatus.CREATED);
+        return new ResponseEntity<>(userServices.createUser(userDto), HttpStatus.CREATED);
     }
 }
