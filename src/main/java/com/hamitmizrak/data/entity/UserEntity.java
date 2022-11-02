@@ -33,7 +33,7 @@ public class UserEntity implements Serializable {
     private String password;
 
     @Column(name = "created_date")
-    //@CreationTimestamp
-    //@Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate=new Date(System.currentTimeMillis());
 }

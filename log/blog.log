@@ -4018,3 +4018,186 @@ Action:
 
 Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
 
+2022-11-02 21:11:19.651  INFO 9176 --- [main] echCareerAirtiesRegisterLoginApplication : Starting TechCareerAirtiesRegisterLoginApplication using Java 17.0.5 on DESKTOP-D7CGATS with PID 9176 (D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main started by hamit in D:\spring\TechCareerAirtiesRegisterLogin)
+2022-11-02 21:11:19.654  INFO 9176 --- [main] echCareerAirtiesRegisterLoginApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-02 21:11:20.240  INFO 9176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-02 21:11:20.283  INFO 9176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-11-02 21:11:20.759  INFO 9176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5555 (http)
+2022-11-02 21:11:20.766  INFO 9176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-02 21:11:20.766  INFO 9176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-02 21:11:20.854  INFO 9176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-02 21:11:20.855  INFO 9176 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1167 ms
+2022-11-02 21:11:21.132  INFO 9176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-02 21:11:21.185  INFO 9176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-02 21:11:21.319  INFO 9176 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-02 21:11:21.398  INFO 9176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-02 21:11:21.546  INFO 9176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-02 21:11:21.561  INFO 9176 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-11-02 21:11:21.993  INFO 9176 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-02 21:11:21.999  INFO 9176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:11:22.326  WARN 9176 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-02 21:11:22.552  WARN 9176 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationApiImpl' defined in file [D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main\com\hamitmizrak\ui\api\impl\AuthenticationApiImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.hamitmizrak.business.services.IAuthenticationService' available: expected single matching bean but found 2: authenticationServiceImpl,authenticationServiceMethodBean
+2022-11-02 21:11:22.553  INFO 9176 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:11:22.554  INFO 9176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-02 21:11:22.556  INFO 9176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-02 21:11:22.558  INFO 9176 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-02 21:11:22.567  INFO 9176 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-02 21:11:22.581 ERROR 9176 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.hamitmizrak.ui.api.impl.AuthenticationApiImpl required a single bean, but 2 were found:
+	- authenticationServiceImpl: defined in file [D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main\com\hamitmizrak\business\services\impl\AuthenticationServiceImpl.class]
+	- authenticationServiceMethodBean: defined by method 'authenticationServiceMethodBean' in class path resource [com/hamitmizrak/bean/AuthenticationServiceBean.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2022-11-02 21:12:02.408  INFO 10868 --- [main] echCareerAirtiesRegisterLoginApplication : Starting TechCareerAirtiesRegisterLoginApplication using Java 17.0.5 on DESKTOP-D7CGATS with PID 10868 (D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main started by hamit in D:\spring\TechCareerAirtiesRegisterLogin)
+2022-11-02 21:12:02.410  INFO 10868 --- [main] echCareerAirtiesRegisterLoginApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-02 21:12:02.903  INFO 10868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-02 21:12:02.946  INFO 10868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2022-11-02 21:12:03.464  INFO 10868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5555 (http)
+2022-11-02 21:12:03.471  INFO 10868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-02 21:12:03.471  INFO 10868 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-02 21:12:03.575  INFO 10868 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-02 21:12:03.575  INFO 10868 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1131 ms
+2022-11-02 21:12:03.827  INFO 10868 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-02 21:12:03.869  INFO 10868 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-02 21:12:04.001  INFO 10868 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-02 21:12:04.080  INFO 10868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-02 21:12:04.226  INFO 10868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-02 21:12:04.252  INFO 10868 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-11-02 21:12:04.709  INFO 10868 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-02 21:12:04.715  INFO 10868 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:12:05.101  WARN 10868 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-02 21:12:05.338  WARN 10868 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationApiImpl' defined in file [D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main\com\hamitmizrak\ui\api\impl\AuthenticationApiImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.hamitmizrak.business.services.IAuthenticationService' available: expected single matching bean but found 2: authenticationServiceImpl,authenticationServiceMethodBean
+2022-11-02 21:12:05.339  INFO 10868 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:12:05.340  INFO 10868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-02 21:12:05.343  INFO 10868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-02 21:12:05.345  INFO 10868 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-02 21:12:05.353  INFO 10868 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-02 21:12:05.368 ERROR 10868 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.hamitmizrak.ui.api.impl.AuthenticationApiImpl required a single bean, but 2 were found:
+	- authenticationServiceImpl: defined in file [D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main\com\hamitmizrak\business\services\impl\AuthenticationServiceImpl.class]
+	- authenticationServiceMethodBean: defined by method 'authenticationServiceMethodBean' in class path resource [com/hamitmizrak/bean/AuthenticationServiceBean.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2022-11-02 21:12:32.330  INFO 18040 --- [main] echCareerAirtiesRegisterLoginApplication : Starting TechCareerAirtiesRegisterLoginApplication using Java 17.0.5 on DESKTOP-D7CGATS with PID 18040 (D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main started by hamit in D:\spring\TechCareerAirtiesRegisterLogin)
+2022-11-02 21:12:32.332  INFO 18040 --- [main] echCareerAirtiesRegisterLoginApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-02 21:12:32.934  INFO 18040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-02 21:12:32.988  INFO 18040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interfaces.
+2022-11-02 21:12:33.512  INFO 18040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5555 (http)
+2022-11-02 21:12:33.520  INFO 18040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-02 21:12:33.520  INFO 18040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-02 21:12:33.602  INFO 18040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-02 21:12:33.602  INFO 18040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1238 ms
+2022-11-02 21:12:33.813  INFO 18040 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-02 21:12:33.849  INFO 18040 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-02 21:12:33.970  INFO 18040 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-02 21:12:34.043  INFO 18040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-02 21:12:34.182  INFO 18040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-02 21:12:34.204  INFO 18040 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-11-02 21:12:34.677  INFO 18040 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-02 21:12:34.684  INFO 18040 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:12:35.056  WARN 18040 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-02 21:12:35.283  WARN 18040 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationApiImpl' defined in file [D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main\com\hamitmizrak\ui\api\impl\AuthenticationApiImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.hamitmizrak.business.services.IAuthenticationService' available: expected single matching bean but found 2: authenticationServiceImpl,authenticationServiceMethodBean
+2022-11-02 21:12:35.283  INFO 18040 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:12:35.284  INFO 18040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-02 21:12:35.287  INFO 18040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-02 21:12:35.289  INFO 18040 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-02 21:12:35.297  INFO 18040 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-02 21:12:35.312 ERROR 18040 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.hamitmizrak.ui.api.impl.AuthenticationApiImpl required a single bean, but 2 were found:
+	- authenticationServiceImpl: defined in file [D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main\com\hamitmizrak\business\services\impl\AuthenticationServiceImpl.class]
+	- authenticationServiceMethodBean: defined by method 'authenticationServiceMethodBean' in class path resource [com/hamitmizrak/bean/AuthenticationServiceBean.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2022-11-02 21:14:30.127  INFO 18072 --- [main] echCareerAirtiesRegisterLoginApplication : Starting TechCareerAirtiesRegisterLoginApplication using Java 17.0.5 on DESKTOP-D7CGATS with PID 18072 (D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main started by hamit in D:\spring\TechCareerAirtiesRegisterLogin)
+2022-11-02 21:14:30.129  INFO 18072 --- [main] echCareerAirtiesRegisterLoginApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-02 21:14:30.623  INFO 18072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-02 21:14:30.661  INFO 18072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interfaces.
+2022-11-02 21:14:31.128  INFO 18072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5555 (http)
+2022-11-02 21:14:31.135  INFO 18072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-02 21:14:31.135  INFO 18072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-02 21:14:31.215  INFO 18072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-02 21:14:31.215  INFO 18072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1031 ms
+2022-11-02 21:14:31.423  INFO 18072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-02 21:14:31.461  INFO 18072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-02 21:14:31.579  INFO 18072 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-02 21:14:31.658  INFO 18072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-02 21:14:31.814  INFO 18072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-02 21:14:31.847  INFO 18072 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-11-02 21:14:32.309  INFO 18072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-02 21:14:32.315  INFO 18072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:14:32.646  WARN 18072 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-02 21:14:33.025  INFO 18072 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@57bfca3a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58690f5e, org.springframework.security.web.context.SecurityContextPersistenceFilter@c49e434, org.springframework.security.web.header.HeaderWriterFilter@b04a6a4, org.springframework.security.web.authentication.logout.LogoutFilter@5c7a06ec, com.hamitmizrak.security.jwt.JwtAuthorizationFilter@49338f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e1d9b32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@cc7909f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b9d2cee, org.springframework.security.web.session.SessionManagementFilter@3e5cbcfe, org.springframework.security.web.access.ExceptionTranslationFilter@3095d06b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f4fc18]
+2022-11-02 21:14:33.667  INFO 18072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5555 (http) with context path ''
+2022-11-02 21:14:33.675  INFO 18072 --- [main] echCareerAirtiesRegisterLoginApplication : Started TechCareerAirtiesRegisterLoginApplication in 3.901 seconds (JVM running for 4.356)
+2022-11-02 21:14:43.073  INFO 18072 --- [http-nio-5555-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-02 21:14:43.074  INFO 18072 --- [http-nio-5555-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-02 21:14:43.075  INFO 18072 --- [http-nio-5555-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-02 21:26:23.002  INFO 18072 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:26:23.003  INFO 18072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-02 21:26:23.006  INFO 18072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-02 21:26:27.470  INFO 17484 --- [main] echCareerAirtiesRegisterLoginApplication : Starting TechCareerAirtiesRegisterLoginApplication using Java 17.0.5 on DESKTOP-D7CGATS with PID 17484 (D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main started by hamit in D:\spring\TechCareerAirtiesRegisterLogin)
+2022-11-02 21:26:27.473  INFO 17484 --- [main] echCareerAirtiesRegisterLoginApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-02 21:26:28.002  INFO 17484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-02 21:26:28.042  INFO 17484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interfaces.
+2022-11-02 21:26:28.525  INFO 17484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5555 (http)
+2022-11-02 21:26:28.531  INFO 17484 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-02 21:26:28.532  INFO 17484 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-02 21:26:28.619  INFO 17484 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-02 21:26:28.619  INFO 17484 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1108 ms
+2022-11-02 21:26:28.887  INFO 17484 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-02 21:26:28.934  INFO 17484 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-02 21:26:29.071  INFO 17484 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-02 21:26:29.161  INFO 17484 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-02 21:26:29.357  INFO 17484 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-02 21:26:29.382  INFO 17484 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-11-02 21:26:30.010  INFO 17484 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-02 21:26:30.017  INFO 17484 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:26:30.364  WARN 17484 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-02 21:26:30.730  INFO 17484 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6987b74e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22e95960, org.springframework.security.web.context.SecurityContextPersistenceFilter@244268a8, org.springframework.security.web.header.HeaderWriterFilter@25b8f9d2, org.springframework.security.web.authentication.logout.LogoutFilter@3c5044fa, com.hamitmizrak.security.jwt.JwtAuthorizationFilter@28654aff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d960561, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21046afa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63846fa4, org.springframework.security.web.session.SessionManagementFilter@97cb8dc, org.springframework.security.web.access.ExceptionTranslationFilter@6b3bc1f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3369e2ce]
+2022-11-02 21:26:31.437  INFO 17484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5555 (http) with context path ''
+2022-11-02 21:26:31.447  INFO 17484 --- [main] echCareerAirtiesRegisterLoginApplication : Started TechCareerAirtiesRegisterLoginApplication in 4.349 seconds (JVM running for 4.879)
+2022-11-02 21:26:51.888  INFO 17484 --- [http-nio-5555-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-02 21:26:51.889  INFO 17484 --- [http-nio-5555-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-02 21:26:51.891  INFO 17484 --- [http-nio-5555-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-02 21:27:35.431  INFO 17484 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 21:27:35.432  INFO 17484 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-02 21:27:35.436  INFO 17484 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
