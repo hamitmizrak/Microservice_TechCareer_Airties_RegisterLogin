@@ -11,7 +11,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
 import javax.servlet.http.HttpServletRequest;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
@@ -45,17 +44,6 @@ public class JwtProviderImpl implements IJwtProvider {
     // Gizli anahtar
     private PrivateKey jwtPrivateKey;
 
-    //key factory method: Java security RSA kullanıdğımızı belirtmemiz için kullanıyoruz
-    @Override
-    public KeyFactory getKeyFactory() {
-        try {
-            return KeyFactory.getInstance("RSA");
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Unknow key generation algorithm ", e);
-        }
-    }
-
-
     //parametresiz constructor
     public JwtProviderImpl(
             @Value("${authentication.jwt.public-key}") String jwtPublicKeyStr,
@@ -81,6 +69,17 @@ public class JwtProviderImpl implements IJwtProvider {
         }
     }
 
+
+    // 1.YÖNTEM
+    //key factory method: Java security RSA kullanıdğımızı belirtmemiz için kullanıyoruz
+    @Override
+    public KeyFactory getKeyFactory() {
+        try {
+            return KeyFactory.getInstance("RSA");
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Unknow key generation algorithm ", e);
+        }
+    }
 
     //1.YÖNTEM generateToken
     // (JWT token oluşturmak) öncelikle sistemde kullanıcı kimliği doğrulanmışssa buradan devam edilir.
@@ -165,6 +164,5 @@ public class JwtProviderImpl implements IJwtProvider {
         if (claims.getExpiration().before(new Date()))
             return false;
         return true;
-
     }
 }

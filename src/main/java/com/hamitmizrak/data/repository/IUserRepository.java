@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface IUserRepository extends JpaRepository<UserEntity,Long> {
 
     //delivered query
+    //Not: @Query gelişmiş sorgular için kullanıyoruz.
    Optional<UserEntity> findByUsername(String username);
 }
 

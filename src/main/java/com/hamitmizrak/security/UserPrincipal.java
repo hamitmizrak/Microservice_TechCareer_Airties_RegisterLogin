@@ -11,6 +11,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+// authentication:kimlik doğrulama işelmini yapacağız.
+// authorization:Yetkilendirme
+
 //lombok
 @Data
 @NoArgsConstructor

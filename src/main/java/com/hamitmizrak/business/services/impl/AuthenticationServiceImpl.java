@@ -13,8 +13,7 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
 
     //injection
     @Autowired
-    private   AuthenticationManager authenticationManager;
-
+    private  AuthenticationManager authenticationManager;
     @Autowired
     private  IJwtProvider iJwtProvider;
 

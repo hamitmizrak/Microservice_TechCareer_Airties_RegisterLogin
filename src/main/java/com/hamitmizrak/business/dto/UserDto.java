@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-
 import java.util.Date;
 
 @Data
@@ -19,5 +18,6 @@ public class UserDto {
     private String username;
     private String name;
     private String password;
+    // private LocalDateTime createdDate;
     private Date createdDate;
 }

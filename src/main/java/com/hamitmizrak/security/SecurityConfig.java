@@ -9,6 +9,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -24,13 +25,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //bean için ekledim
 @Configuration
-public class SecurityConfigurationCustom extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //field
     private final PasswordEncoderBean passwordEncoderBean;
     private final UserDetailsServiceCustom customUserDetailsService;
 
 
+    //////////////////////////////////////////////////////////////////////////////////
+    //BEAN
     //import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
     @Bean
     public WebMvcConfigurer corsConfigurer(){
@@ -43,17 +46,24 @@ public class SecurityConfigurationCustom extends WebSecurityConfigurerAdapter {
         };
     }
 
-    //kimlik doğrulama
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoderBean.passwordEncoderMethod());
-    }
-
-
     // JwtAuthorizationFilter için @Autowired için bean olarak işaretledim
     @Bean
     public JwtAuthorizationFilter jwtAuthorizationFilterBeanMethod(){
         return new JwtAuthorizationFilter();
+    }
+
+    // AUTHENTICATION_MANAGER
+    @Override
+    @Bean(BeanIds.AUTHENTICATION_MANAGER)
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////
+    //kimlik doğrulama
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoderBean.passwordEncoderMethod());
     }
 
     //yetkilendirme yapılandırılması roller sadece ilgili kişiler erişsin
@@ -76,10 +86,8 @@ public class SecurityConfigurationCustom extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(jwtAuthorizationFilterBeanMethod(), UsernamePasswordAuthenticationFilter.class);
     }
 
-    //
     @Override
-    @Bean(BeanIds.AUTHENTICATION_MANAGER)
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+    public void configure(WebSecurity web) throws Exception {
+        super.configure(web);
     }
 }
