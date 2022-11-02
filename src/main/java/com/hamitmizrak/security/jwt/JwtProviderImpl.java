@@ -92,7 +92,6 @@ public class JwtProviderImpl implements IJwtProvider {
                 .compact();
     }
 
-
     //2.YÖNTEM (jwt ayrıştırılması Bearer
     //HEADER: Bearer => 7
     @Override
