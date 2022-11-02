@@ -37,7 +37,7 @@ public class SecurityConfigurationCustom extends WebSecurityConfigurerAdapter {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("*") //localhost, "^http://([-\\w]*.)?localhost(:[0-9]*)?"
+                registry.addMapping("/**").allowedOrigins("*")
                         .allowedMethods("*"); //POST,GET,
             }
         };
@@ -82,5 +82,4 @@ public class SecurityConfigurationCustom extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-
 }
