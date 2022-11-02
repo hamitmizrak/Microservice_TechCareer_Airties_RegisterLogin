@@ -3219,3 +3219,24 @@ Caused by: org.postgresql.util.PSQLException: ERROR: no schema has been selected
 2022-11-02 20:05:45.514  INFO 300 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-11-02 20:05:45.515  INFO 300 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-11-02 20:05:45.518  INFO 300 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-02 20:05:51.680  INFO 14796 --- [main] echCareerAirtiesRegisterLoginApplication : Starting TechCareerAirtiesRegisterLoginApplication using Java 17.0.5 on DESKTOP-D7CGATS with PID 14796 (D:\spring\TechCareerAirtiesRegisterLogin\build\classes\java\main started by hamit in D:\spring\TechCareerAirtiesRegisterLogin)
+2022-11-02 20:05:51.682  INFO 14796 --- [main] echCareerAirtiesRegisterLoginApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-02 20:05:52.166  INFO 14796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-02 20:05:52.206  INFO 14796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interfaces.
+2022-11-02 20:05:52.706  INFO 14796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5555 (http)
+2022-11-02 20:05:52.713  INFO 14796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-02 20:05:52.713  INFO 14796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-02 20:05:52.798  INFO 14796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-02 20:05:52.798  INFO 14796 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1083 ms
+2022-11-02 20:05:53.045  INFO 14796 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-02 20:05:53.082  INFO 14796 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-02 20:05:53.240  INFO 14796 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-02 20:05:53.336  INFO 14796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-02 20:05:53.498  INFO 14796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-02 20:05:53.514  INFO 14796 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-11-02 20:05:54.017  INFO 14796 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-02 20:05:54.023  INFO 14796 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 20:05:54.451  WARN 14796 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-02 20:05:54.866  INFO 14796 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8beb0dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d99d327, org.springframework.security.web.context.SecurityContextPersistenceFilter@46ff1aad, org.springframework.security.web.header.HeaderWriterFilter@66d6e50b, org.springframework.security.web.authentication.logout.LogoutFilter@16fb9fdd, com.hamitmizrak.security.jwt.JwtAuthorizationFilter@5bf4dfb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d4600fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51aaa9d4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@233789d9, org.springframework.security.web.session.SessionManagementFilter@e88e14, org.springframework.security.web.access.ExceptionTranslationFilter@570b85dd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@488b46da]
+2022-11-02 20:05:55.537  INFO 14796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5555 (http) with context path ''
+2022-11-02 20:05:55.546  INFO 14796 --- [main] echCareerAirtiesRegisterLoginApplication : Started TechCareerAirtiesRegisterLoginApplication in 4.217 seconds (JVM running for 4.885)
