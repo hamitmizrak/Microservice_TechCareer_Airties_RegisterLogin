@@ -1,6 +1,7 @@
 package com.hamitmizrak.retrofit;
 
 import com.google.gson.Gson;
+import com.hamitmizrak.retrofit.request.IDailyServiceRequest;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,5 +39,11 @@ public class RetrofitConfigBean {
                 .writeTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
                 .readTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
                 .connectTimeout(TIMEOUT_SECONDS,TimeUnit.SECONDS);
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    //Microservis buraya tanımlayalım.
+    public IDailyServiceRequest dailyServiceRequest(Retrofit.Builder builder,@Value("${daily.service.url}") String dailyBaseUrl){
+        return builder.baseUrl(dailyBaseUrl).build().create(IDailyServiceRequest.class);
     }
 }

@@ -10,10 +10,9 @@ public interface IDailyServiceRequest {
     //CREATE
     Call<JsonElement> dailySave(JsonElement jsonElement);
 
-    //DELETE
-    Call<Void> dailyDelete(Long id);
-
     //LIST
     Call<List<JsonElement>> dailyList();
 
+    //DELETE
+    Call<Void> dailyDelete(Long id);
 }
