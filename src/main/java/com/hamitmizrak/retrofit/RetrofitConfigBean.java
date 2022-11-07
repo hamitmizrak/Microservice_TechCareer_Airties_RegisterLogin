@@ -1,6 +1,5 @@
 package com.hamitmizrak.retrofit;
 
-
 import com.google.gson.Gson;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
@@ -9,8 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 import java.util.concurrent.TimeUnit;
+
 //Configuration: spring' yeni bir nesne kardeş var bilgin olsun
 @Configuration
 public class RetrofitConfigBean {
@@ -18,12 +17,13 @@ public class RetrofitConfigBean {
     @Value("${retrofit.timeout}")
     private Long TIMEOUT_SECONDS;
 
-    //retrofit bean
+    //retrofit => @Bean
     @Bean
     public Retrofit.Builder secureKeyBuilder(OkHttpClient okHttpClient, Gson gson){
         return new Retrofit.Builder().client(okHttpClient).addConverterFactory(GsonConverterFactory.create(gson));
     }
 
+    //OkHttpClient => @Bean
     @Bean
     public OkHttpClient secureKeyClient(
             @Value("${service.security.secure-key-username}") String secureKeyUsernameStr,
