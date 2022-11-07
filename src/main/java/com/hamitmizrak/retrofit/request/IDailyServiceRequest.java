@@ -2,17 +2,21 @@ package com.hamitmizrak.retrofit.request;
 
 import com.google.gson.JsonElement;
 import retrofit2.Call;
+import retrofit2.http.*;
 
 import java.util.List;
 
 public interface IDailyServiceRequest {
 
     //CREATE
-    Call<JsonElement> dailySave(JsonElement jsonElement);
+    @POST("/api/v1/daily")
+    Call<JsonElement> dailySave( @Body JsonElement jsonElement);
 
     //LIST
+    @GET("/api/v1/daily")
     Call<List<JsonElement>> dailyList();
 
     //DELETE
-    Call<Void> dailyDelete(Long id);
+    @DELETE("/api/v1/daily/{id}")
+    Call<Void> dailyDelete(@Path("id") Long id);
 }
