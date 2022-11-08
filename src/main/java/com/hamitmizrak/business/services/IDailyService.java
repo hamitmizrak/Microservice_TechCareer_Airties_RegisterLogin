@@ -12,6 +12,12 @@ public interface IDailyService {
     //LIST
     List<JsonElement> dailyList();
 
+    //FIND
+    JsonElement dailyFind(Long id);
+
     //DELETE
     void dailyDelete(Long id);
+
+    //UPDATE
+    JsonElement dailyUpdate(Long id,JsonElement jsonElement);
 }

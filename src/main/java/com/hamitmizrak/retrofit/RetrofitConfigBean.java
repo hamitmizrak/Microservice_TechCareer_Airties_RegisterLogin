@@ -43,6 +43,7 @@ public class RetrofitConfigBean {
 
     ////////////////////////////////////////////////////////////////////////
     //Microservis buraya tanımlayalım.
+    //IDailyServiceRequest
     @Bean
     public IDailyServiceRequest dailyServiceRequest(Retrofit.Builder builder,@Value("${daily.service.url}") String dailyBaseUrl){
         return builder.baseUrl(dailyBaseUrl).build().create(IDailyServiceRequest.class);

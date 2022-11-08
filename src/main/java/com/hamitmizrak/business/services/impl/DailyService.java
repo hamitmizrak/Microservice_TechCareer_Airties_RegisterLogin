@@ -32,9 +32,21 @@ public class DailyService implements IDailyService {
         return RetrofitCommonGenerics.retrofitGenerics(iDailyServiceRequest.dailyList());
     }
 
+    //FIND
+    @Override
+    public JsonElement dailyFind(Long id) {
+        return RetrofitCommonGenerics.retrofitGenerics(iDailyServiceRequest.dailyFind(id));
+    }
+
     //DELETE
     @Override
     public void dailyDelete(Long id) {
          RetrofitCommonGenerics.retrofitGenerics(iDailyServiceRequest.dailyDelete(id));
+    }
+
+    //UPDATE
+    @Override
+    public JsonElement dailyUpdate(Long id, JsonElement jsonElement) {
+        return RetrofitCommonGenerics.retrofitGenerics(iDailyServiceRequest.dailyUpdate(id,jsonElement));
     }
 }
