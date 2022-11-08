@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 //Lombok
@@ -25,7 +26,7 @@ public class DailyApiImpl implements IDailyApi {
     //SAVE
     @Override
     @PostMapping
-    public ApiResult saveDaily(@RequestBody JsonElement jsonElement) {
+    public ApiResult saveDaily(@Valid @RequestBody JsonElement jsonElement) {
         dailyService.dailySave(jsonElement);
         return new ApiResult(200, "Kayıt olundu", PATH);
     }
@@ -55,7 +56,7 @@ public class DailyApiImpl implements IDailyApi {
     //http://localhost:1111/gateway/daily/update/1
     @Override
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateDaily(@PathVariable(name="id") Long id, @RequestBody JsonElement jsonElement) {
+    public ResponseEntity<?> updateDaily(@PathVariable(name="id") Long id, @Valid @RequestBody JsonElement jsonElement) {
         return ResponseEntity.ok( dailyService.dailyUpdate(id,jsonElement));
     }
 }
