@@ -24,16 +24,8 @@ public class AuthenticationApiImpl implements IAuthenticationApi {
     private final IUserServices userServices;
 
 
-    //LOGIN
-    // http://localhost:5555/api/authentication/login
-    @Override
-    @PostMapping("login")
-    public ResponseEntity<?> login(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(authenticationService.loginReturnJwt(userDto), HttpStatus.OK);
-    }
-
     //REGISTER
-    // http://localhost:5555/api/authentication/register
+    // http://localhost:1111/api/authentication/register
     @Override
     @PostMapping("register")
     public ResponseEntity<?> register(@RequestBody UserDto userDto) {
@@ -43,5 +35,13 @@ public class AuthenticationApiImpl implements IAuthenticationApi {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
         return new ResponseEntity<>(userServices.createUser(userDto), HttpStatus.CREATED);
+    }
+
+    //LOGIN
+    // http://localhost:1111/api/authentication/login
+    @Override
+    @PostMapping("login")
+    public ResponseEntity<?> login(@RequestBody UserDto userDto) {
+        return new ResponseEntity<>(authenticationService.loginReturnJwt(userDto), HttpStatus.OK);
     }
 }

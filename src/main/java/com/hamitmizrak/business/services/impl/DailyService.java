@@ -16,6 +16,19 @@ import java.util.List;
 
 @Service
 public class DailyService implements IDailyService {
+    // REST             REQUEST
+    // ----------       -------
+    // @GetMapping      @GET
+    // @PostMapping     @POST
+    // @DeleteMapping   @DELETE
+    // @PutMapping      @PUT
+
+    // @PathVariable    @Path
+    // @RequestBody     @Body
+
+    // ResponseEntity   Call
+    // DailyDto         JsonElement
+
 
     //injection
     private final IDailyServiceRequest iDailyServiceRequest;
@@ -49,4 +62,5 @@ public class DailyService implements IDailyService {
     public JsonElement dailyUpdate(Long id, JsonElement jsonElement) {
         return RetrofitCommonGenerics.retrofitGenerics(iDailyServiceRequest.dailyUpdate(id,jsonElement));
     }
+
 }

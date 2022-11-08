@@ -5,6 +5,19 @@ import com.google.gson.JsonElement;
 import java.util.List;
 
 public interface IDailyService {
+    // REST             REQUEST
+    // ----------       -------
+    // @GetMapping      @GET
+    // @PostMapping     @POST
+    // @DeleteMapping   @DELETE
+    // @PutMapping      @PUT
+
+    // @PathVariable    @Path
+    // @RequestBody     @Body
+
+    // ResponseEntity   Call
+    // DailyDto         JsonElement
+
 
     //SAVE
     JsonElement dailySave(JsonElement jsonElement);

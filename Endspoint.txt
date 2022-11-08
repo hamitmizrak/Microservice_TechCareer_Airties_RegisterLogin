@@ -1,0 +1,63 @@
+// REGISTER
+POST /api/authentication/register HTTP/1.1
+Host: localhost:1111
+Content-Type: application/json
+Content-Length: 83
+{
+     "username":"kullanıcı adı",
+     "name":"root",
+     "password":"root"
+}
+
+
+// LOGIN
+POST /api/authentication/login HTTP/1.1
+Host: localhost:1111
+Content-Type: application/json
+Content-Length: 53
+
+{
+     "username":"root",
+     "password":"root"
+}
+
+///////////////////////////////////////
+Daily
+//CREATE
+http://localhost:1111/gateway/daily
+POST /gateway/daily HTTP/1.1
+Host: localhost:1111
+Authorization: Bearer
+Content-Type: application/json
+{
+    "dailyHeader":"header1",
+    "dailyContent":"içerik1",
+    "email":"hamitmizrak1@gmail.com",
+    "password":"Hm1234561@"
+}
+
+//LIST
+GET /gateway/daily HTTP/1.1
+Host: localhost:1111
+Authorization: Bearer
+
+
+//FIND
+GET /gateway/daily/2 HTTP/1.1
+Host: localhost:1111
+Authorization: Bearer
+
+//UPDATE
+PUT /gateway/daily/3 HTTP/1.1
+Host: localhost:1111
+Authorization: Bearer
+
+//DELETE
+DELETE /gateway/daily/2 HTTP/1.1
+Host: localhost:1111
+Authorization: Bearer
+
+///////////////////////////////////////
+Blog
+
+
