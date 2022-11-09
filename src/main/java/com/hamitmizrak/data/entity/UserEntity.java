@@ -35,5 +35,5 @@ public class UserEntity implements Serializable {
     @Column(name = "created_date")
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate=new Date(System.currentTimeMillis());
+    private Date createdDate; //=new Date(System.currentTimeMillis());
 }

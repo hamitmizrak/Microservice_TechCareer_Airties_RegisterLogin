@@ -62,6 +62,6 @@ public class DailyApiImpl implements IDailyApi {
     @PutMapping("/{id}")
     public ApiResult updateDaily(@PathVariable(name="id")Long id, @RequestBody  JsonElement jsonElement) {
         dailyService.dailyUpdate(id,jsonElement);
-        return new ApiResult(200, "güncellendi", PATH);
+        return new ApiResult(200, "Güncellendi", PATH);
     }
 }
