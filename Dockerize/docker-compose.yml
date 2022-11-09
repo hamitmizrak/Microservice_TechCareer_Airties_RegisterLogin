@@ -4,7 +4,7 @@ services:
     container_name: micro.jar
     image: micro.jar
     restart: always
-    build: ..
+    build: ./
     ports:
       - "1111:1111"
     depends_on:
@@ -13,7 +13,7 @@ services:
     image: postgres
     restart: always
     ports:
-      - "5431:5432"
+      - "6666:6666"
     environment:
       - POSTGRES_PASSWORD=root
       - POSTGRES_USER=postgres
