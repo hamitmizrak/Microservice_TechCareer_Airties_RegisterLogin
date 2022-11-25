@@ -30,11 +30,11 @@ public class AuthenticationApiImpl implements IAuthenticationApi {
     private final IUserServices userServices;
 
 
-  private final  AuthenticationManager authenticationManager;
-   private final JwtProviderImpl jwtUtils;
+       private final  AuthenticationManager authenticationManager;
+       private final JwtProviderImpl jwtUtils;
 
 
-    //REGISTER
+    // REGISTER
     // http://localhost:1111/api/authentication/register
     @Override
     @PostMapping("register")
@@ -47,7 +47,7 @@ public class AuthenticationApiImpl implements IAuthenticationApi {
         return new ResponseEntity<>(userServices.createUser(userDto), HttpStatus.CREATED);
     }
 
-    //LOGIN
+    // LOGIN
     // http://localhost:1111/api/authentication/login
     @Override
     @PostMapping("login")

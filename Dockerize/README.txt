@@ -1,50 +1,52 @@
-docker container ls
-docker inspect 93c06848fc0b | grep IPAddress
-ipaddress: 192.168.0.3
+./gradlew bootJar
+build > libs > JAR
+
+docker-compose up
+docker-compose down
+
+http://localhost:2222
+
+docker image ls
+docker ps
+
+## Register (POST)
+http://localhost:1111/api/authentication/register
+{
+   "name":"root",
+   "username":"root",
+   "password":"root"
+}
 
 
-docker container ls
-docker container stop 587830e964af  9aebe436b56d
-docker container rm e385d3511ae3  9aebe436b56d
+## Login (POST)
+http://localhost:8080/api/authentication/login
+{
+   "username":"root",
+   "password":"root"
+}
 
-docker network ls
-docker network rm dailyjar_default  microdaily-blogjar_default
-
-docker network create daily 
-2ed62da2dbd30d2ccad9088b386cb4917d4b3b2bfd9b6d9655720b810153aacd
-
-docker network create micro 
-bfd5dd5594ad2ffbd7ef4b00d7d63868316d46bb1e2100b9e824ac83560044ba
-
-docker image ls 
-mainmicro.jar  
-daily.jar  
-
-docker network ls 
-docker container run --network micro --name microContainer -p 1111:1111    mainmicro.jar
-docker container run --network daily --name dailyContainer -p 2222:2222    daily.jar
+Bearer Token: eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiJyb290IiwidXNlcklkIjoxLCJyb2xlcyI6IlVTRVIiLCJleHAiOjE2Njk0Nzk5NjN9.eRICF5a7UFd8JRpXuP52_Q9Mm4g0Cm9un06x8Q88rZq-Kx2-P-1zUgaC7Jw6RllAURnFsz0BJmrE-ZqGKyxssBeXFF6GAEdqo32P9KI7kQvT150RaAz9MDPcTBOmUzioJuMaRF6uGWvQO45Ks3QSS1cIMRPmuTEX1tiEnAbg2_XdMcUep072nqt15DJW3DEY5DSrgdNzcSBgAWLvmy9JB3RKYj_giXsCuZMD-NCRIFNKsHJf4sS52BmyO1g7Ccf1FvPBq3r3ypqcHXdMwVAPToFnDy37XqgEwst0eNOaBRebW9k5Cpqg7N2FOc8fF87zJlq51un53NqVj3VlcbnTCg
 
 
-docker-compose up -d
+Register üzerinden Dailym  Erişmek
 
-docker network ls
-docker network rm networkID 
-docker network prune
-docker inspect networkID
+#CREATE (POST)
+http://localhost:1111/gateway/daily
+{
+    "dailyHeader":"header2",
+    "dailyContent":"içerik2",
+    "email":"email@xyz.com",
+    "password":"Şifre1"
+}
 
-docker container logs containerID
-docker container exec -it containerID
+#Listelemek
+http://localhost:1111/gateway/daily
 
-ping 1111
-ping 2222
+#FIND
+http://localhost:1111/gateway/daily/1
 
-docker ps 
-docker container inspect 5e2f72bedafd
-"NetworkSettings"
- "Networks"
-    "IPAddress": "192.168.96.2",
-	
-	
-docker container inspect 8fcce7ff1a32	
-    "IPAddress": "192.168.80.2",
+#DELETE
+http://localhost:1111/gateway/daily/1
 
+#UPDATE
+http://localhost:1111/gateway/daily/1
