@@ -1,0 +1,106 @@
+docker container --help
+docker search nginx
+docker pull nginx
+docker pull httpd
+
+##############################################
+docker container logs containerID
+docker container inspect containerID
+
+##############################################
+## IMAGE
+docker image ls
+docker image ls -a (çalışan çalışmayan bütün container göster)
+docker image rm imageID
+
+##############################################
+## CONTAİNER
+docker container run --publish 7777:80 nginx
+docker container run -p 7777:80 nginx
+docker container run -p 7777:80 --detach nginx
+docker container run -p 7777:80 -d nginx
+docker container run -p 7777:80 -d  --name merhabalar nginx
+docker container run -p 7777:80 -d  --name merhabalar nginx:latest
+docker container run -p 7777:80 -d  --name merhabalar nginx:1.14
+
+docker container stop vibrant_goldwasser
+docker container rm -f containerID
+
+# --rm: bu container kapattığımızda kendisi silinir.
+docker container run --rm -p 7777:80 -d nginx
+
+docker container logs containerID
+docker container logs -t 7ee939cc4fdd
+docker container logs -f 7ee939cc4fdd
+
+docker container prune
+-y
+
+curl localhost:7777
+
+# monitoring: tis
+docker container top containerID
+docker container inspect containerID
+docker container stats containerID
+
+
+docker container run -d -p 9696:80 --cpus="2" nginx
+docker container run --name deneme44 -d -p 9696:80 --memory=200m --memory-swap=400m --cpus="2"  nginx
+
+
+##############################################
+## TERMİNAL  (SER)
+winpty docker container exec -it containerID bash           (Çalışan container terminaline bağlanmak)
+winpty docker container run -it imageName bash              (Yeni bir container oluştur ve termianline bağlan)
+winpty docker container start -ai containerID bash          (kapatılmış containerin teminaline  bağlan)
+
+winpty docker container run -it ubuntu bash
+
+
+##############################################
+docker search nginx
+docker pull nginx
+docker container run -d -p 7777:80 --name web2 nginx
+winpty docker container exec -it web2 bash
+winpty docker container exec -it web2 sh
+cat >> usr/share/nginx/html/index.html
+<html>
+<head>
+<body>
+<h1>merhabaalr</h1>
+</body>
+</html>
+
+###############################################
+# BIND MOUND
+# bizim yazdığımız bir index.html ile nginx yer değiştirdik
+docker container run -d -p 7777:80 -v C:/Users/hamit/Desktop/nginx:/usr/share/nginx/html nginx
+
+# VOLUME
+docker volume ls
+docker volume prune
+docker container run -d --name mysqldata -e MYSQL_ROOT_PASSWORD=root -p 3307:3306 -v mysql-db:/var/lib/mysql mysql
+docker volume inspect mysql-db
+
+docker container ps
+docker container exec  -it mysqldata bash
+mysql -u root -p
+
+###############################################
+# network
+docker network ls
+docker network inspect bridge
+docker network create deneme66               (bridge:default olan network)
+docker network create --driver host deneme66 (Host: containeler arasında izolasyon olamdığı durumlarda)
+docker container run -d -p 7777:80 --network deneme66 nginx
+docker network prune  --filter "until=12h"
+
+docker container ps
+docker container inspect containerID
+docker network create --driver=bridge --subnet=10.10.1.1/11 --ip-range=10.10.5.1/12 --gateway=10.10.8.8 daily
+
+
+
+
+
+

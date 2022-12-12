@@ -1,0 +1,30 @@
+--- network --- 
+docker network ls
+docker network prune
+docker network inspect bridge
+
+-- compose
+docker-compose up -d
+docker-compose down
+
+
+--- maven --- 
+./mvnw clean install -DskipTests
+
+
+-- gradle ---
+/.gradlew bootJar
+
+docker network create --driver=bridge deneme
+
+docker build -t register .
+docker container run  --name api_register --network deneme -p 1111:1111 register
+
+docker build -t daily .
+docker container run  --name api_daily --network deneme -p 2222:2222 daily
+docker network inspect deneme
+
+
+docker container run  --name api_register  -p 1111:1111 register
+docker container run  --name api_daily     -p 2222:2222 daily
+docker network inspect bridge

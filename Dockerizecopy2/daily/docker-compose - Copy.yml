@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  dailyapp:
+    container_name: daily.jar
+    image: daily
+    restart: always
+    build: ./
+    ports:
+      - "2222:2222"
+    networks:
+        - registerloginapp-network
+networks:
+  registerloginapp-network:
+    name: registerloginapp-network
+    driver: bridge
