@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  register.jar:
+    container_name: register.jar
+    image: register.jar
+    restart: always
+    build: ./
+    ports:
+      - "1111:1111"
+    networks:
+      - employee-mysql2
+    depends_on:
+      - mysqldb
+  mysqldb:
+    image: mysql:8
+    container_name: mysqldb
+    ports:
+      - "6666:3306"
+    networks:
+      - employee-mysql2
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=techcareerairtiesgateway
+networks:
+  employee-mysql2:
