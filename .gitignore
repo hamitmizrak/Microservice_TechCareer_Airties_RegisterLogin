@@ -1,5 +1,7 @@
 
 *.jar
+log
+memory_persist
 
 HELP.md
 .gradle
